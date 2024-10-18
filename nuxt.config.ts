@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/seo",
     "@nuxthub/core",
+    "@nuxt/eslint",
   ],
 
   shadcn: {

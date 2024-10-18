@@ -7,10 +7,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:generate": "drizzle-kit generate",
+    "shadcn-add": "pnpx shadcn-vue@latest add && pnpm prettier --write app/components/ui"
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20241011.0",
+    "@nuxt/eslint": "^0.6.0",
     "@nuxthub/core": "^0.7.33",
     "@nuxtjs/seo": "2.0.0-rc.23",
     "@radix-icons/vue": "^1.0.0",

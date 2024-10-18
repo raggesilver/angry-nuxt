@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/d1";
-export { and, eq, or, sql } from "drizzle-orm";
 
 import * as schema from "~~/server/db/schema";
+export { and, eq, or, sql } from "drizzle-orm";
 
 export const tables = schema;
 

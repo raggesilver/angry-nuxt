@@ -146,9 +146,9 @@ const extraFeatures = [
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8">
       <form
+        class="flex flex-col gap-4 w-full md:max-w-[400px] justify-self-center border p-4 rounded-lg shadow-lg relative"
         @submit="onSubmit"
         @reset="form.handleReset"
-        class="flex flex-col gap-4 w-full md:max-w-[400px] justify-self-center border p-4 rounded-lg shadow-lg relative"
       >
         <div>
           <p class="text-xl font-bold">Sign Up</p>
@@ -227,6 +227,7 @@ const extraFeatures = [
       >
         <span
           v-for="color of colors"
+          :key="color"
           class="w-12 h-12 rounded-lg border"
           :class="color"
         ></span>
@@ -241,8 +242,8 @@ const extraFeatures = [
           <CardHeader>
             <CardTitle as="h3" class="flex gap-1 items-center">
               <component
-                v-if="feature.icon"
                 :is="feature.icon"
+                v-if="feature.icon"
                 class="h[1.2rem]"
               />
               {{ feature.title }}
