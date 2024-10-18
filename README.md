@@ -8,13 +8,13 @@ This is a template for a Nuxt 4\* project.
 ## What is included?
 
 - [x] Nuxt 4 compatible
-- [x] Nuxt Image
 - [x] Nuxt SEO
 - [x] [UnoCSS](https://unocss.dev/) — Tailwind CSS compatible, but faster and more feature-rich
 - [x] [Shadcn Vue](https://shadcn-vue.com) — Pre-configured Shadcn components
   - Includes Zod and VeeValidate for fully typed forms
-- [x] [Drizzle ORM](https://orm.drizzle.team) with Postgres
-  - Automatic migrations on start ✅
+- [x] [Drizzle ORM](https://orm.drizzle.team) with Cloudflare D1
+  - Automatic migrations in development ✅
+- [x] Prettier + ESLint
 
 ## Setup
 
