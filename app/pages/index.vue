@@ -119,7 +119,7 @@ const extraFeatures = [
         </h1>
         <p class="text-lg">
           A Nuxt.js starter template with UnoCSS, Shadcn Vue, Drizzle ORM,
-          Postgres, and more.
+          SQLite, and more.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:self-start">
