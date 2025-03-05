@@ -12,36 +12,36 @@
     "shadcn-add": "pnpx shadcn-vue@latest add && pnpm prettier --write app/components/ui"
   },
   "dependencies": {
-    "@cloudflare/workers-types": "^4.20250129.0",
+    "@cloudflare/workers-types": "^4.20250303.0",
     "@nuxt/eslint": "^0.7.6",
-    "@nuxthub/core": "^0.8.15",
+    "@nuxthub/core": "^0.8.18",
     "@nuxtjs/seo": "2.1.1",
     "@radix-icons/vue": "^1.0.0",
     "@vee-validate/zod": "^4.15.0",
-    "@vueuse/core": "^12.5.0",
+    "@vueuse/core": "^12.7.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.39.1",
+    "drizzle-orm": "^0.39.3",
     "lucide-vue-next": "^0.474.0",
     "nuxt": "^3.15.4",
-    "radix-vue": "^1.9.13",
+    "radix-vue": "^1.9.17",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.6.0",
     "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
-    "zod": "^3.24.1"
+    "zod": "^3.24.2"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+  "packageManager": "pnpm@9.15.6+sha512.139cab068fdf0b751268179ac5f909b5be72afb4a75c513d1905d151befc8977b593d3cf8671ed83d4d6637c5c94b98ffbce108125de4a5a27a31233601a99de",
   "devDependencies": {
-    "@unocss/nuxt": "^65.4.3",
-    "@vueuse/nuxt": "^12.5.0",
-    "drizzle-kit": "^0.30.4",
-    "prettier": "^3.4.2",
+    "@unocss/nuxt": "^65.5.0",
+    "@vueuse/nuxt": "^12.7.0",
+    "drizzle-kit": "^0.30.5",
+    "prettier": "^3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "typescript": "^5.7.3",
-    "unocss": "^65.4.3",
+    "typescript": "^5.8.2",
+    "unocss": "^65.5.0",
     "unocss-preset-animations": "^1.1.1",
-    "vue-tsc": "^2.2.0",
-    "wrangler": "^3.106.0"
+    "vue-tsc": "^2.2.8",
+    "wrangler": "^3.112.0"
   }
 }
