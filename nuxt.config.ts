@@ -1,14 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-07-27",
   devtools: { enabled: true },
-
-  future: {
-    compatibilityVersion: 4,
-  },
 
   hub: {
     database: true,
+    workers: true,
   },
 
   modules: [
@@ -28,7 +25,7 @@ export default defineNuxtConfig({
   css: ["@unocss/reset/tailwind-compat.css", "~/assets/css/main.css"],
 
   site: {
-    url: "https://angrynuxt.pages.dev",
+    url: "https://angry-nuxt.pages.dev",
     name: "Angry Nuxt",
     description: "A Nuxt.js template",
     defaultLocale: "en", // Not needed if you install @nuxtjs/i18n

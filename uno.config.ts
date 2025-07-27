@@ -1,105 +1,47 @@
-import {
-  defineConfig,
-  presetTypography,
-  presetWind,
-  transformerCompileClass,
-  transformerDirectives,
-  transformerVariantGroup,
-} from "unocss";
-import presetAnimations from "unocss-preset-animations";
+// unocss.config.ts
+import { presetWind } from "@unocss/preset-wind3";
+import { defineConfig, transformerDirectives } from "unocss";
+import { presetAnimations } from "unocss-preset-animations";
+import { presetShadcn } from "unocss-preset-shadcn";
 
 export default defineConfig({
-  content: {
-    pipeline: {
-      include: /\.(vue|svelte|tsx?|mdx?|astro|elm|php|phtml|html)($|\?)/,
-    },
-  },
   presets: [
     presetWind({
       dark: "media",
     }),
     presetAnimations(),
-    presetTypography(),
+    presetShadcn(
+      {
+        color: "stone",
+        darkSelector: "media",
+      },
+      {
+        // If you are using reka ui.
+        componentLibrary: "reka",
+      },
+    ),
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-    transformerCompileClass(),
-  ],
+  transformers: [transformerDirectives()],
+  // By default, `.ts` and `.js` files are NOT extracted.
+  // If you want to extract them, use the following configuration.
+  // It's necessary to add the following configuration if you use shadcn-vue or shadcn-svelte.
+  content: {
+    pipeline: {
+      include: [
+        // the default
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        // include js/ts files
+        "**/*.{js,ts}",
+      ],
+    },
+  },
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      maxWidth: {
-        "2xl": "1400px",
-      },
     },
-    colors: {
-      border: "hsl(var(--border))",
-      input: "hsl(var(--input))",
-      ring: "hsl(var(--ring))",
-      background: "hsl(var(--background))",
-      foreground: "hsl(var(--foreground))",
-      primary: {
-        DEFAULT: "hsl(var(--primary))",
-        foreground: "hsl(var(--primary-foreground))",
-      },
-      secondary: {
-        DEFAULT: "hsl(var(--secondary))",
-        foreground: "hsl(var(--secondary-foreground))",
-      },
-      destructive: {
-        DEFAULT: "hsl(var(--destructive))",
-        foreground: "hsl(var(--destructive-foreground))",
-      },
-      muted: {
-        DEFAULT: "hsl(var(--muted))",
-        foreground: "hsl(var(--muted-foreground))",
-      },
-      accent: {
-        DEFAULT: "hsl(var(--accent))",
-        foreground: "hsl(var(--accent-foreground))",
-      },
-      popover: {
-        DEFAULT: "hsl(var(--popover))",
-        foreground: "hsl(var(--popover-foreground))",
-      },
-      card: {
-        DEFAULT: "hsl(var(--card))",
-        foreground: "hsl(var(--card-foreground))",
-      },
-    },
-    borderRadius: {
-      xl: "calc(var(--radius) + 4px)",
-      lg: "var(--radius)",
-      md: "calc(var(--radius) - 2px)",
-      sm: "calc(var(--radius) - 4px)",
-    },
-    animation: {
-      properties: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-        "collapsible-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-collapsible-content-height)" },
-        },
-        "collapsible-up": {
-          from: { height: "var(--radix-collapsible-content-height)" },
-          to: { height: 0 },
-        },
-      },
-      keyframes: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "collapsible-down": "collapsible-down 0.2s ease-in-out",
-        "collapsible-up": "collapsible-up 0.2s ease-in-out",
-      },
+    fontFamily: {
+      zodiak: "'Zodiak', serif",
+      sans: "'Plus Jakarta Sans', sans-serif",
     },
   },
 });

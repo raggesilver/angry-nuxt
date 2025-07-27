@@ -268,7 +268,7 @@ const extraFeatures = [
       <div
         class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center !mt-8 w-content"
       >
-        <Button as-child variant="secondary" class="flex gap-1 items-center">
+        <Button as-child variant="secondary" class="flex gap-0.5 items-center">
           <NuxtLink
             to="https://hub.nuxt.com/new?repo=raggesilver/angry-nuxt"
             external
@@ -278,7 +278,7 @@ const extraFeatures = [
             <ArrowUpRightIcon class="h-[1.4em]" />
           </NuxtLink>
         </Button>
-        <Button as-child class="flex gap-1 items-center">
+        <Button as-child class="flex gap-0.5 items-center">
           <NuxtLink to="https://ko-fi.com/raggesilver" external target="_blank">
             Support Me <CoffeeIcon class="h-[1.4em]" />
           </NuxtLink>

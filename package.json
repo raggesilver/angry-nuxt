@@ -9,39 +9,47 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "db:generate": "drizzle-kit generate",
-    "shadcn-add": "pnpx shadcn-vue@latest add && pnpm prettier --write app/components/ui"
+    "shadcn-add": "bunx shadcn-vue@latest add && bun prettier --write app/components/ui"
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20250303.0",
-    "@nuxt/eslint": "^0.7.6",
-    "@nuxthub/core": "^0.8.18",
-    "@nuxtjs/seo": "2.1.1",
+    "@nuxt/eslint": "^1.7.1",
+    "@nuxthub/core": "^0.9.0",
+    "@nuxtjs/seo": "3.1.0",
     "@radix-icons/vue": "^1.0.0",
-    "@vee-validate/zod": "^4.15.0",
-    "@vueuse/core": "^12.7.0",
+    "@vee-validate/zod": "^4.15.1",
+    "@vueuse/core": "^13.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.39.3",
-    "lucide-vue-next": "^0.474.0",
-    "nuxt": "^3.15.4",
+    "lucide-vue-next": "^0.526.0",
+    "nuxt": "^4.0.1",
     "radix-vue": "^1.9.17",
-    "shadcn-nuxt": "^0.10.4",
-    "tailwind-merge": "^2.6.0",
-    "vee-validate": "^4.15.0",
+    "reka-ui": "^2.4.0",
+    "shadcn-nuxt": "^2.2.0",
+    "tailwind-merge": "^3.3.1",
+    "vee-validate": "^4.15.1",
     "vue": "^3.5.13",
-    "zod": "^3.24.2"
+    "zod": "^4.0.10"
   },
-  "packageManager": "pnpm@9.15.6+sha512.139cab068fdf0b751268179ac5f909b5be72afb4a75c513d1905d151befc8977b593d3cf8671ed83d4d6637c5c94b98ffbce108125de4a5a27a31233601a99de",
   "devDependencies": {
-    "@unocss/nuxt": "^65.5.0",
-    "@vueuse/nuxt": "^12.7.0",
+    "@unocss/nuxt": "^66.3.3",
+    "@vueuse/nuxt": "^13.5.0",
     "drizzle-kit": "^0.30.5",
     "prettier": "^3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "^5.8.2",
-    "unocss": "^65.5.0",
+    "unocss": "^66.3.3",
     "unocss-preset-animations": "^1.1.1",
-    "vue-tsc": "^2.2.8",
-    "wrangler": "^3.112.0"
+    "unocss-preset-shadcn": "^0.5.0",
+    "vue-tsc": "^3.0.4",
+    "wrangler": "^4.26.0"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "unrs-resolver"
+  ],
+  "patchedDependencies": {
+    "unocss-preset-shadcn@0.5.0": "patches/unocss-preset-shadcn@0.5.0.patch"
   }
 }

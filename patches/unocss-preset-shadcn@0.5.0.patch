@@ -1,0 +1,44 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index b305aa41bc28a15680390acd377c27f3aad3240d..d9c97fc2c6adecaf4f749cb2ed092ec3efcca51d 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -847,14 +847,15 @@ function generateColorCSSVars(color) {
+   }).filter(Boolean).join("\n");
+ }
+ function colorCSSVarsStyles(lightVars, darkVars, { radius, themeName, darkSelector }) {
++  const useMedia = darkSelector === "media";
+   return `
+ ${themeName ? `.theme-${themeName}` : ":root"} {
+ ${lightVars}
+ ${radius ? generateRadiusCSSVars(radius) : ""}
+ }
+-${themeName ? `${darkSelector} .theme-${themeName}` : darkSelector} {
++${themeName ? `${darkSelector} .theme-${themeName}` : useMedia ? `@media (prefers-color-scheme: dark) {\n:root` : darkSelector} {
+ ${darkVars}
+-}`;
++} ${useMedia ? "}" : ""}`;
+ }
+ function generateRadiusCSSVars(radius) {
+   return `  --radius: ${radius}rem;`;
+diff --git a/dist/index.mjs b/dist/index.mjs
+index cf3f895d80c053319724f7c9c3037f74d3cf3f4b..61aa51326ae4de72f3711ea8196bd06954e60121 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -843,14 +843,15 @@ function generateColorCSSVars(color) {
+   }).filter(Boolean).join("\n");
+ }
+ function colorCSSVarsStyles(lightVars, darkVars, { radius, themeName, darkSelector }) {
++  const useMedia = darkSelector === "media";
+   return `
+ ${themeName ? `.theme-${themeName}` : ":root"} {
+ ${lightVars}
+ ${radius ? generateRadiusCSSVars(radius) : ""}
+ }
+-${themeName ? `${darkSelector} .theme-${themeName}` : darkSelector} {
++${themeName ? `${darkSelector} .theme-${themeName}` : useMedia ? `@media (prefers-color-scheme: dark) {\n:root` : darkSelector} {
+ ${darkVars}
+-}`;
++} ${useMedia ? "}" : ""}`;
+ }
+ function generateRadiusCSSVars(radius) {
+   return `  --radius: ${radius}rem;`;
