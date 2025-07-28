@@ -27,8 +27,3 @@ jobs:
         uses: nuxt-hub/action@v2
         with:
           build-command: bun run build
-
-      - name: Migrate
-        run: bun --bun drizzle-kit migrate
-        env:
-          NUXT_DATABASE_URL: ${{ secrets.NUXT_DATABASE_URL }}

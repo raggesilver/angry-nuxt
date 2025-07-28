@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   hub: {
     database: true,
     workers: true,
+    databaseMigrationsDirs: ["./server/db/drizzle"],
   },
 
   modules: [
