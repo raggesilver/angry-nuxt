@@ -1,13 +1,11 @@
-# Angry Nuxt Template
+# 😡 Angry Nuxt Template
 
-This is a template for a Nuxt 4\* project.
+Easiest way to start and deploy a Nuxt 4 project on Cloudflare, via Nuxt Hub.
 
-> \* Nuxt 4 has not been released yet, but we already have feature flags and
-> directory structure that are compatible with it.
+[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?template=raggesilver/angry-nuxt)
 
 ## What is included?
 
-- [x] Nuxt 4 compatible
 - [x] Nuxt SEO
 - [x] [UnoCSS](https://unocss.dev/) — Tailwind CSS compatible, but faster and more feature-rich
 - [x] [Shadcn Vue](https://shadcn-vue.com) — Pre-configured Shadcn components
@@ -15,9 +13,10 @@ This is a template for a Nuxt 4\* project.
 - [x] [Drizzle ORM](https://orm.drizzle.team) with Cloudflare D1
   - Automatic migrations in development ✅
 - [x] Prettier + ESLint
+- [x] Nuxt Hub — Easy Cloudflare deployments
 
 ## Setup
 
 ```bash
-npx nuxi@latest init --template raggesilver/angry-nuxt-template
+bunx nuxt@latest init --template raggesilver/angry-nuxt
 ```

@@ -1,0 +1,53 @@
+diff --git a/dist/cjs/lucide-vue-next.js b/dist/cjs/lucide-vue-next.js
+index e76c62ef90240ed36c3229cd6cf5b78cdcfefe71..14cd979ee7183ae47b1f958519123d082d818382 100644
+--- a/dist/cjs/lucide-vue-next.js
++++ b/dist/cjs/lucide-vue-next.js
+@@ -24,8 +24,6 @@ const mergeClasses = (...classes) => classes.filter((className, index, array) =>
+ 
+ var defaultAttributes = {
+   xmlns: "http://www.w3.org/2000/svg",
+-  width: 24,
+-  height: 24,
+   viewBox: "0 0 24 24",
+   fill: "none",
+   stroke: "currentColor",
+diff --git a/dist/esm/defaultAttributes.js b/dist/esm/defaultAttributes.js
+index 4b67023c351277eb0b8c8bfe00632e2190b7bcb8..8a5d025736f93434c5290314a9e25e5891121e4b 100644
+--- a/dist/esm/defaultAttributes.js
++++ b/dist/esm/defaultAttributes.js
+@@ -7,8 +7,6 @@
+ 
+ var defaultAttributes = {
+   xmlns: "http://www.w3.org/2000/svg",
+-  width: 24,
+-  height: 24,
+   viewBox: "0 0 24 24",
+   fill: "none",
+   stroke: "currentColor",
+diff --git a/dist/umd/lucide-vue-next.js b/dist/umd/lucide-vue-next.js
+index 03251ff58474f9b9e303cf95c0acc5a0d2ecb466..d64c85f3464496f371c058b6b98a1fbd93fbf2a9 100644
+--- a/dist/umd/lucide-vue-next.js
++++ b/dist/umd/lucide-vue-next.js
+@@ -7,9 +7,10 @@
+ 
+ (function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue')) :
+-  typeof define === 'function' && define.amd ? define(['exports', 'vue'], factory) :
+-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.LucideVueNext = {}, global.vue));
+-})(this, (function (exports, vue) { 'use strict';
++    typeof define === 'function' && define.amd ? define(['exports', 'vue'], factory) :
++      (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.LucideVueNext = {}, global.vue));
++})(this, (function (exports, vue) {
++  'use strict';
+ 
+   const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+   const toCamelCase = (string) => string.replace(
+@@ -26,8 +27,6 @@
+ 
+   var defaultAttributes = {
+     xmlns: "http://www.w3.org/2000/svg",
+-    width: 24,
+-    height: 24,
+     viewBox: "0 0 24 24",
+     fill: "none",
+     stroke: "currentColor",

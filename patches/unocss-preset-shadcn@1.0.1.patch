@@ -1,8 +1,11 @@
-diff --git a/dist/index.cjs b/dist/index.cjs
-index b305aa41bc28a15680390acd377c27f3aad3240d..d9c97fc2c6adecaf4f749cb2ed092ec3efcca51d 100644
---- a/dist/index.cjs
-+++ b/dist/index.cjs
-@@ -847,14 +847,15 @@ function generateColorCSSVars(color) {
+diff --git a/node_modules/unocss-preset-shadcn/.bun-tag-5585177e2810d899 b/.bun-tag-5585177e2810d899
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/dist/shared/unocss-preset-shadcn.CkBgcFA8.cjs b/dist/shared/unocss-preset-shadcn.CkBgcFA8.cjs
+index 4ed946ccc8971ea61069e510845118263911f188..21a5cc0f7f4f9dacea7d63721ed99d12fbdaa9d8 100644
+--- a/dist/shared/unocss-preset-shadcn.CkBgcFA8.cjs
++++ b/dist/shared/unocss-preset-shadcn.CkBgcFA8.cjs
+@@ -845,14 +845,15 @@ function generateColorCSSVars(color) {
    }).filter(Boolean).join("\n");
  }
  function colorCSSVarsStyles(lightVars, darkVars, { radius, themeName, darkSelector }) {
@@ -20,10 +23,10 @@ index b305aa41bc28a15680390acd377c27f3aad3240d..d9c97fc2c6adecaf4f749cb2ed092ec3
  }
  function generateRadiusCSSVars(radius) {
    return `  --radius: ${radius}rem;`;
-diff --git a/dist/index.mjs b/dist/index.mjs
-index cf3f895d80c053319724f7c9c3037f74d3cf3f4b..61aa51326ae4de72f3711ea8196bd06954e60121 100644
---- a/dist/index.mjs
-+++ b/dist/index.mjs
+diff --git a/dist/shared/unocss-preset-shadcn.uqEyakAZ.mjs b/dist/shared/unocss-preset-shadcn.uqEyakAZ.mjs
+index 6edc58c1f220608d6c96b5a52687830a93cb2035..41a17e04e4b6408fcf4edef2ee02f88b43eb22b2 100644
+--- a/dist/shared/unocss-preset-shadcn.uqEyakAZ.mjs
++++ b/dist/shared/unocss-preset-shadcn.uqEyakAZ.mjs
 @@ -843,14 +843,15 @@ function generateColorCSSVars(color) {
    }).filter(Boolean).join("\n");
  }

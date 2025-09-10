@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { toTypedSchema } from "@vee-validate/zod";
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
@@ -12,8 +11,6 @@ import {
   SearchIcon,
   SpellCheck2Icon,
 } from "lucide-vue-next";
-import { useForm } from "vee-validate";
-import { z } from "zod";
 
 defineOgImageComponent("NuxtSeo");
 
@@ -28,32 +25,6 @@ useHead({
   ],
 });
 
-const schema = z.object({
-  name: z
-    .string()
-    .min(
-      2,
-      "Name must be at least 2 characters. This is a custom error message.",
-    ),
-  tos: z
-    .boolean()
-    .refine((value) => value, "You must accept the terms of service."),
-});
-
-const validationSchema = toTypedSchema(schema);
-
-const form = useForm({
-  validationSchema,
-  initialValues: {
-    name: "",
-    tos: false,
-  },
-});
-
-const onSubmit = form.handleSubmit((values) => {
-  alert(JSON.stringify(toRaw(values), null, 2));
-});
-
 const colors = [
   "bg-red-300",
   "bg-red-400",
@@ -65,10 +36,10 @@ const colors = [
   "bg-emerald-500",
   "bg-emerald-600",
 
-  "bg-cyan-300",
-  "bg-cyan-400",
-  "bg-cyan-500",
-  "bg-cyan-600",
+  "bg-blue-300",
+  "bg-blue-400",
+  "bg-blue-500",
+  "bg-blue-600",
 ];
 
 const extraFeatures = [
@@ -132,9 +103,11 @@ const extraFeatures = [
               <GithubIcon class="h-[1.4em]" /> View Source
             </NuxtLink>
           </Button>
-          <Button class="flex gap-1 items-center"
-            >Get Started <ArrowRightIcon class="h-[1.4em]"
-          /></Button>
+          <Button class="flex gap-1 items-center" as-child>
+            <NuxtLink to="#get-started-today"
+              >Get Started <ArrowRightIcon class="h-[1.4em]"
+            /></NuxtLink>
+          </Button>
         </div>
       </div>
       <img
@@ -145,68 +118,16 @@ const extraFeatures = [
     </section>
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8">
-      <form
+      <SignUpForm
         class="flex flex-col gap-4 w-full md:max-w-[400px] justify-self-center border p-4 rounded-lg shadow-lg relative"
-        @submit="onSubmit"
-        @reset="form.handleReset"
-      >
-        <div>
-          <p class="text-xl font-bold">Sign Up</p>
-          <p class="text-sm text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          </p>
-        </div>
-        <FormField v-slot="{ componentField }" name="name">
-          <FormItem>
-            <FormLabel>Name</FormLabel>
-            <FormControl>
-              <Input
-                type="text"
-                v-bind="componentField"
-                placeholder="Jane Doe"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
-        <FormField v-slot="{ value, handleChange }" type="checkbox" name="tos">
-          <FormItem>
-            <div class="space-y-4 leading-none">
-              <div class="flex items-center space-x-2">
-                <FormControl>
-                  <Checkbox :checked="value" @update:checked="handleChange" />
-                </FormControl>
-                <FormLabel
-                  class="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >I agree to the terms of service.</FormLabel
-                >
-              </div>
-              <FormMessage />
-            </div>
-          </FormItem>
-        </FormField>
-        <div class="grid lt-sm:grid-cols-1 sm:grid-flow-col gap-2">
-          <Button type="reset" variant="secondary">Reset</Button>
-          <Button type="submit">Submit</Button>
-        </div>
-
-        <span
-          aria-hidden="true"
-          class="absolute w-3 h-3 rounded-full bg-primary/30 -top-1.5 -right-1.5 animate-ping"
-        ></span>
-
-        <span
-          aria-hidden="true"
-          class="absolute w-2 h-2 rounded-full bg-primary -top-1 -right-1"
-        ></span>
-      </form>
+      />
       <div class="flex flex-col gap-8 -lt-md:order-1">
         <h2 class="text-3xl sm:text-5xl font-extrabold">
           Ship your forms with confidence.
         </h2>
         <p>
-          Type-safe Forms! Shared frontend and backend validation with Zod.
-          Accessible client-side validation with VeeValidate.
+          Type-safe forms! Zod schemas are shared between the frontend and
+          backend, ensuring your data is always valid.
         </p>
       </div>
     </section>
@@ -259,7 +180,7 @@ const extraFeatures = [
     <section
       class="flex flex-col items-center border rounded-xl px-4 py-20 space-y-4"
     >
-      <h2 class="text-3xl sm:text-5xl font-extrabold">
+      <h2 id="get-started-today" class="text-3xl sm:text-5xl font-extrabold">
         Get started <span class="underline">today</span>.
       </h2>
 
